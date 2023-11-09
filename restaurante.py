@@ -11,6 +11,7 @@ def activar_entry(list_n):
             cont_lists[list_n][cont].configure(state=NORMAL)
         # Si no está marcada, desactiva el Entry
         else:
+            cont_lists[list_n][cont].delete(0,END)
             cont_lists[list_n][cont].configure(state=DISABLED)
 
 main = Tk()
@@ -34,32 +35,14 @@ top_frame_lbl = Label(top_frame,font=("Verdana",78),text="Facturació de restaur
 top_frame_lbl.pack()
 
 # Elementos del frame izquierdo
-meal_frame = Frame(left_frame,bd=1,relief=FLAT)
-drink_frame = Frame(left_frame,bd=1,relief=FLAT)
-dessert_frame = Frame(left_frame,bd=1,relief=FLAT)
+meal_frame_lbl = LabelFrame(left_frame,font=("Verdana",24),text="Plats",fg="Black")
+drink_frame_lbl = LabelFrame(left_frame,font=("Verdana",24),text="Begudes",fg="Black")
+dessert_frame_lbl = LabelFrame(left_frame,font=("Verdana",24),text="Postres",fg="Black")
 
 # Colocación de los elementos del frame izquierdo
-meal_frame.grid(row=0,column=0)
-drink_frame.grid(row=0,column=1)
-dessert_frame.grid(row=0,column=2)
-
-# Elementos del frame de comidas
-meal_frame_lbl = LabelFrame(meal_frame,font=("Verdana",24),text="Plats",fg="Blue")
-
-# Colocación de los elementos del frame de comidas
-meal_frame_lbl.pack(side=TOP)
-
-# Elementos del frame de bebidas
-drink_frame_lbl = LabelFrame(drink_frame,font=("Verdana",24),text="Begudes",fg="Blue")
-
-# Colocación de los elementos del frame de bebidas
-drink_frame_lbl.pack(side=TOP)
-
-# Elementos del frame de postres
-dessert_frame_lbl = LabelFrame(dessert_frame,font=("Verdana",24),text="Postres",fg="Blue")
-
-# Colocación de los elementos del frame de postres
-dessert_frame_lbl.pack(side=TOP)
+meal_frame_lbl.grid(row=0,column=0,ipadx=2,padx=5)
+drink_frame_lbl.grid(row=0,column=1,ipadx=2,padx=5)
+dessert_frame_lbl.grid(row=0,column=2,ipadx=2,padx=5)
 
 # Listas de productos
 meal_list = ["Amanida", "Canelons", "Paella", "Fideuà", "Entrecot", "Pizza", "Salmó", "Truita"]
